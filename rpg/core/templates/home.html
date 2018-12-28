@@ -14,15 +14,20 @@
     <div class="tituloH">
         <h1 class="tituloArea">Eldern Saga</h1>
     </div>
+    <!--Botoes de navegação-->
     <div id="buttonDiv">
         <button class="buttonSelect" id="btnMonstros">Monstros</button>
-        <button class="buttonSelect" id="btnMapa">Mapa</button>
+        <button class="buttonSelect" id="btnMapa">Mapas</button>
+        <button class="buttonSelect" id="btnHabilidade">Habilidades</button>
+        <button class="buttonSelect" id="btnClasse">Classes</button>
+        <button class="buttonSelect" id="btnRaca">Raças</button>
     </div>
-    <div id="monstrosDiv">
+    <!--Os monstros-->
+    <div id="monstrosDiv" class="grandesDivs">
         <div class="tituloH">
             <h2 class="tituloArea">Livro dos Monstros</h2>
         </div>
-        <table id="tableMob">
+        <table class="tabelaG">
                 {% for monstro in monstros %}
                     <tr class="monstrosTR">
                         <td class="tdIMG">
@@ -78,6 +83,182 @@
                                 <tr>
                                     <td>
                                         <p>Classe: {{monstro.classe}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Habilidades: 
+                                            {% for habilidade in monstro.habilidades.all %}
+                                                {{habilidade}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <!--Mapas-->
+    <div id="mapasDiv" class="grandesDivs nVer">
+        <div class="tituloH">
+            <h2 class="tituloArea">Mapas</h2>
+        </div>
+        <table class="tabelaG">
+                {% for mapa in mapas %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{mapa.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{mapa.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Descrição: {{mapa.descricao}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Monstros: 
+                                            {% for monstro in mapa.monstros.all %}
+                                                {{monstro}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <!--Habilidades-->
+    <div id="habilidadesDiv" class="grandesDivs nVer">
+        <div class="tituloH">
+            <h2 class="tituloArea">Habilidades</h2>
+        </div>
+        <table class="tabelaG">
+                {% for habilidade in habilidades %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{habilidade.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{habilidade.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Level Requerido: {{habilidade.levelR}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Descrição: {{habilidade.descricao}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <!--Classes-->
+    <div id="classesDiv" class="grandesDivs nVer">
+        <div class="tituloH">
+            <h2 class="tituloArea">Classes</h2>
+        </div>
+        <table class="tabelaG">
+                {% for classe in classes %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{classe.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{classe.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Level Requerido: {{classe.levelR}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Descrição: {{classe.descricao}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Habilidades de classe: 
+                                            {% for habilidade in classe.habilidades.all %}
+                                                {{habilidade}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <!--Raças-->
+    <div id="racasDiv" class="grandesDivs nVer">
+        <div class="tituloH">
+            <h2 class="tituloArea">Raças</h2>
+        </div>
+        <table class="tabelaG">
+                {% for raca in racas %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{raca.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{raca.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Descrição: {{raca.descricao}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Classes: 
+                                            {% for classe in raca.classe.all %}
+                                                {{classe}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Habilidades de raça: 
+                                            {% for habilidade in raca.habilidades.all %}
+                                                {{habilidade}}
+                                            {% endfor %}
+                                        </p>
                                     </td>
                                 </tr>
                             </table>
