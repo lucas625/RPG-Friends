@@ -7,96 +7,94 @@
     <title>Eldern Saga</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'imagens/icon.png' %}" />
 </head>
 
 <body>
-    <table id="tableMob">
-        <tr class="tableIn">
-            <th>Monstros</th>
-        </tr>
-        {% for monstro in monstros %}
-            <tr class="monstrosTR">
-                <div>
-                    <img src="{{monstro.imagem.url}}">
-                </div>
-                <div>
-                    <table>
-                        <tr>
-                            <td>
-                                <p>Nome: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.nome}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Level: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.level}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Ataque: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.ataque}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Mana: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.mana}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Defesa: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.defesa}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Resistência: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.resistencia}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Exp ganho: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.exp}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Alinhamento: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.alinhamento}}</p>
-                            </td>
-                        <tr>
-                        <tr>
-                            <td>
-                                <p>Classe: </p>
-                            </td>
-                            <td>
-                                <p>{{monstro.classe}}</p>
-                            </td>
-                        <tr>
-                    </table>
-                </div>
-            </tr>
-        {% endfor%}
-    </table>
+    <div class="tituloH">
+        <h1 class="tituloArea">Eldern Saga</h1>
+    </div>
+    <div id="buttonDiv">
+        <button class="buttonSelect" id="btnMonstros">Monstros</button>
+        <button class="buttonSelect" id="btnMapa">Mapa</button>
+    </div>
+    <div id="monstrosDiv">
+        <div class="tituloH">
+            <h2 class="tituloArea">Livro dos Monstros</h2>
+        </div>
+        <table id="tableMob">
+                {% for monstro in monstros %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{monstro.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{monstro.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Level: {{monstro.level}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Ataque: {{monstro.ataque}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Vida: {{monstro.vida}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Mana: {{monstro.mana}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Defesa: {{monstro.defesa}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Resistência: {{monstro.resistencia}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Exp garantido: {{monstro.exp}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Alinhamento: {{monstro.alinhamento}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Classe: {{monstro.classe}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <script 
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="{% static 'scripts/main.js' %}"></script>
+    <!--JQuery-->
+    
 </body>
+
 </html>

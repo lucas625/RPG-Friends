@@ -4,7 +4,7 @@ Necessário ter python na máquina. Caso não tenha:
 
 Windows - https://www.python.org/downloads/ Linux - sudo apt install python3.7
 
-Confira se o Python foi instalado digitando python e verifique a versão om python -V
+Confira se o Python foi instalado digitando python e verifique a versão com python -V
 
 Dentro da pasta do projeto, rode o comando:
   python -m venv env

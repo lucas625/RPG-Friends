@@ -1,3 +1,119 @@
+:root{
+    margin: 0;
+    --corGeral: #A8FF6A;
+    --corTexto: #000000;
+    --fonteGeral: 'Franklin Gothic Medium', sans-serif;
+}
 body{
-    background-color: orange;
+    background-color: var(--corGeral);
+    margin: 0;
+}
+table{
+    border-collapse: collapse;
+}
+.tituloH{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+tbody{
+    width: 100%;
+    height: 100%;
+}
+.tituloArea{
+    font-family: var(--fonteGeral);
+    font-size: 24px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--corTexto);
+    font-style: italic;
+    font-weight: lighter;
+    border: 0;
+    border-bottom: 2px;
+    border-color: rgba(38, 100, 232, 0.40);
+    border-style: solid;
+    margin: 0;
+}
+.tituloH h1{
+    font-size: 32px;
+    border-color: rgba(38, 100, 232, 0.75);
+}
+#buttonDiv{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.buttonSelect{
+    width: 20%;
+    height: 40%;
+    font-family: var(--fonteGeral);
+    border: 0;
+    margin: 0;
+    background-color: rgba(38, 100, 232, 0.75);
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(218,217,224,1);/*css matic*/
+    -moz-box-shadow: 0px 0px 15px 3px rgba(218,217,224,1);
+    box-shadow: 0px 0px 15px 3px rgba(218,217,224,1);
+    font-size: 20px;
+    color: white;
+    font-weight: lighter;
+    font-style: italic;
+}
+.nVer{
+    display: none;
+}
+#tableMob{
+    width: 100%;
+}
+.monstrosTR{
+    height: 10vh;
+    width: 90%;
+    border-radius: 4px 4px 4px 4px;
+    border: 0;
+    border: 2px;
+    border-color: rgba(143, 71, 7, 0.90);
+    border-style: solid;
+    margin-bottom: 10px;
+}
+.monstroATT{
+    padding: 0;
+    width: 65%;
+    padding-left: 5%;
+    height: 100%;
+    border-left: 2px;
+    border-color: rgba(143, 71, 7, 0.90);
+    border-style: solid;
+}
+.tdIMG{
+    width: 30%;
+    height: 100%;
+    padding: 0;
+}
+.mobsATS{
+    width: 100%;
+    height: 100%;
+}
+.mobsATS tbody{
+    width: 100%;
+    height: 100%;
+}
+#tableMob p{
+    font-family: var(--fonteGeral);
+    font-size: 16px;
+    color: var(--corTexto);
+
+}
+.imgMonstro{
+    width: 100%;
+    min-height: 300px;
+    max-height: 400px;
 }
