@@ -30,6 +30,27 @@ class Classe(models.Model):
     def __str__(self):
         return self.nome
 
+class Item(models.Model):
+    nome = models.CharField(max_length=100, primary_key=True)
+    imagem = models.ImageField(upload_to='classes/', null=False, blank=False)
+    descricao = models.TextField(null=False, blank=False)
+    levelR = models.DecimalField(null=False, blank=False, max_digits=3, decimal_places=0)
+    vida = models.DecimalField(max_digits=15, decimal_places=0, null=False, blank=False)
+    mana = models.DecimalField(max_digits=15, decimal_places=0, null=False, blank=False)
+    defesa = models.DecimalField(max_digits=10, decimal_places=0, null=False, blank=False)
+    resistencia = models.DecimalField(max_digits=10, decimal_places=0, null=False, blank=False)
+    ataque = models.DecimalField(max_digits=12, decimal_places=2, null=False, blank=False)
+    habilidades = models.ManyToManyField(Habilidade, blank=True)
+    preco = models.DecimalField(max_digits=15, decimal_places=2, null=False, blank=False)
+    classes = models.ManyToManyField(Classe, blank=True)
+
+    class Meta:
+        verbose_name = 'Item'
+        verbose_name_plural = 'Items'
+        ordering = ('levelR', 'nome',)
+
+    def __str__(self):
+        return self.nome
 
 class Monstro(models.Model):
     nome = models.CharField(max_length=100, primary_key=True)
@@ -44,6 +65,8 @@ class Monstro(models.Model):
     alinhamento = models.CharField(max_length=100, null=False, blank=False)
     classe = models.ForeignKey(Classe, on_delete=models.SET_NULL, null=True, blank=True)
     habilidades = models.ManyToManyField(Habilidade, blank=True)
+    items = models.ManyToManyField(Item, blank=True)
+    ouro = models.DecimalField(max_digits=15, decimal_places=2, null=False, blank=False, default=0.00)
 
     class Meta:
         verbose_name = 'Monstro'

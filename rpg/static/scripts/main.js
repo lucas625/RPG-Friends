@@ -23,10 +23,16 @@ $('#btnRaca').click(function() {
     $('#racasDiv').removeClass("nVer");
 });
 
+$('#btnItem').click(function() {
+    removerVisao();
+    $('#itensDiv').removeClass("nVer");
+});
+
 function removerVisao(){
     $('#monstrosDiv').addClass("nVer");
     $('#mapasDiv').addClass("nVer");
     $('#habilidadesDiv').addClass("nVer");
     $('#classesDiv').addClass("nVer");
     $('#racasDiv').addClass("nVer");
+    $('#itensDiv').addClass("nVer");
 }

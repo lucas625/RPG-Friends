@@ -21,6 +21,7 @@
         <button class="buttonSelect" id="btnHabilidade">Habilidades</button>
         <button class="buttonSelect" id="btnClasse">Classes</button>
         <button class="buttonSelect" id="btnRaca">Raças</button>
+        <button class="buttonSelect" id="btnItem">Itens</button>
     </div>
     <!--Os monstros-->
     <div id="monstrosDiv" class="grandesDivs">
@@ -91,6 +92,21 @@
                                             Habilidades: 
                                             {% for habilidade in monstro.habilidades.all %}
                                                 {{habilidade}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Ouro: {{monstro.ouro}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Drops: 
+                                            {% for item in monstro.items.all %}
+                                                {{item}}
                                             {% endfor %}
                                         </p>
                                     </td>
@@ -267,6 +283,91 @@
                 {% endfor %}
             </table>
     </div>
+    <!--Items-->
+    <div id="itensDiv" class="grandesDivs nVer">
+        <div class="tituloH">
+            <h2 class="tituloArea">Itens</h2>
+        </div>
+        <table class="tabelaG">
+                {% for item in itens %}
+                    <tr class="monstrosTR">
+                        <td class="tdIMG">
+                            <img class="imgMonstro" src="{{item.imagem.url}}">
+                        </td>
+                        <td class="monstroATT">
+                            <table class="mobsATS">
+                                <tr>
+                                    <td>
+                                        <p>Nome: {{item.nome}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Custo: {{item.preco}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Level Requerido: {{item.levelR}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Descrição: {{item.descricao}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Ataque: {{item.ataque}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Vida: {{item.vida}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Mana: {{item.mana}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Defesa: {{item.defesa}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Resistência: {{item.resistencia}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Classes: 
+                                            {% for classe in item.classes.all %}
+                                                {{classe}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Habilidades do item: 
+                                            {% for habilidade in item.habilidades.all %}
+                                                {{habilidade}}
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+    <!--Scripts-->
     <script 
     src="https://code.jquery.com/jquery-3.3.1.slim.js"
     integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
